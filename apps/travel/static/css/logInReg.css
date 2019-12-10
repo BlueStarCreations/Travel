@@ -1,0 +1,27 @@
+/* ------------------------------------------------------------------------------- */
+/* BASIC SETUP ----  globally applied and are located in style.css*/
+/* ------------------------------------------------------------------------------- */
+
+body{
+    background-image: url("../images/starrysky.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+/* .logIn{
+    margin-top: 90px;
+    margin-left: 140px;
+} */
+/* #exampleInputEmail1, #inputPassword4{
+    width: 40%;
+} */
+/* .reg{
+    margin-top: 90px;
+    margin-right: 140px;
+} */
+/* 
+#inputEmail4, #inputconfirmPassword4{
+    width: 80%;
+} */
+

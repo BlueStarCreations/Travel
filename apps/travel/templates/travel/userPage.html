@@ -1,0 +1,88 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/welome.css' %}">
+</head>
+<body>
+    <div class="class container-fluid">
+        <div class="row">
+            <div class="col">
+                <h1>Welcome, {{user.first_name}}!</h1>
+            </div>
+            <div class="col">
+                <h1>{{logoutMessage}}</h1>
+                <a href="/createTravels" class="btn btn btn-info active" role="button" aria-pressed="true">Create Trips!</a>
+                <a href="/logout" class="btn btn-secondary  active" role="button" aria-pressed="true">Log Out</a>
+                
+            </div>
+            
+        </div>    
+    </div>
+ 
+ <div class="form-group row">
+        <div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-6 col-md-offset-1 col-md-4 col-lg-offset-1 col-lg-2">
+            <h3>Everyone's Trips</h3>
+            <table class="table table-hover table-dark">
+                <thead>
+                    <tr>
+                   <th scope="col">Trips</th>
+                   <th scope="col">Actions</th>
+                    </tr>
+                </thead>   
+              
+                   {% for travel in allTravels %}
+                    
+                <tr>
+                   
+                    <td>{{travel.title}}</td>
+                    <td>{{travel.location}}</td>
+
+                    <td>
+                        {% if travel.travel_planner.id == request.session.user_id %}
+                        <a href="/showTravel/{{travel.id}}">View</a> |  <a href="/deleteTravel/{{travel.id}}/destroy">Remove</a>  | <a href="/editTravel/{{travel.id}}/edit">Edit</a> | <a href="/joinTravel/{{travel.id}}">Add</a>
+                        {% else %}
+                        <a href="/showTravel/{{travel.id}}">View</a> | <a href="/deleteTravel/{{travel.id}}">Add</a>
+                        {% endif %}
+                    </td>                            
+                  </tr>   
+                        
+                    {% endfor %}
+
+                
+               
+            </table>    
+        </div>
+        </div>
+
+    <div class="form-group row">
+        <div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-6 col-md-offset-1 col-md-4 col-lg-offset-1 col-lg-2">
+            <h3>{{user.first_name}}'s Trips</h3>
+            <table class="table table-hover table-dark">
+                <thead>
+                    <tr>
+                   <th scope="col">Travels</th>
+                   <th scope="col">Actions</th>
+                    </tr>
+                </thead>     
+             
+                     {% for travel in travelsJoined %} 
+                <tr>
+                    <td>{{travel.title}}</td>
+                    <td><a href="/showTravel/{{travel.id}}">View</a> |  <a href="/deleteTravel/{{travel.id}}/destroy">Done</a>  | <a href="/cancelTravel/{{travel.id}}">Give Up</a></td>                           
+                </tr>
+                {% endfor %}
+            </table>    
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

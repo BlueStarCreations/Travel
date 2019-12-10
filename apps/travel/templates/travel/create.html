@@ -1,0 +1,110 @@
+
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create Travel</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/create.css' %}"
+</head>
+<body>
+     {% if messages %}
+      <ul class="messages">    
+        {% for message in messages %}    
+          <li>{{ message.message }}</li>    
+    {% endfor %}
+    {% endif %}
+
+    <div class="class container-fluid">
+        <div class="class row">
+            <div class="class col">
+                <h1>Welcome, {{user.first_name}}! </h1>
+            </div>
+            <div class="name=success p-3 mb-2 bg-secondary text-whitebg-gradient-info">
+                <h1>{{logoutMessage}}</h1>
+                <a href="/logout" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Log Out</a>
+            </div>
+        </div>
+
+<div class="class row">
+    <div class="col">
+        <div class="class row">
+            <form action="/createTravels" method=POST>
+    {%csrf_token%}
+                        
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+            <label for="exampleFormControlInput1">Title: </label>
+            <input name="title"  type="text"  class="form-control" id="exampleFormControlInput1" placeholder="Enter title of your job here">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+            <label for="exampleFormControlInput1">Description: </label>
+            <input name="description"  type="text"  class="form-control" id="exampleFormControlInput1" placeholder="Enter description of your job here">
+            </div>
+        </div>
+    </div>
+                        
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+            <label for="exampleFormControlInput1">Location: </label>
+            <input name="location" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter location of your job here">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <h3>Category:</h3>
+
+                <div class="form-group form-check">
+                <input type="checkbox" name="category" value="gardening">Gardening
+                </div>
+
+                <div class="form-group form-check">
+            <input type="checkbox" name="category" value="petcare">Pet Care
+        </div>
+        <div class="form-group form-check">
+                <input type="checkbox" name="category" value="eventplaner">Event Planner
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Other: </label>
+                    <input name="other"  type="text"  class="form-control" id="exampleFormControlInput1" placeholder="Enter other interest here">
+                </div>
+            </div>
+        </div>
+
+
+                </div>                                  
+            </div>
+            </div>          
+    
+        <div class="row">
+            <div class="col-auto">
+                <a href="/myTrips" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Cancel</a>
+                <button type="submit" id="book_id" class="p-3 mb-2 bg-success text-white btn btn-secondary btn-lg" tabindex="-1" role="button" aria-disabled="true">Submit</button>
+            </div>
+            </div>
+
+</form> 
+        </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

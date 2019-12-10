@@ -1,0 +1,440 @@
+
+/* ------------------------------------------------------------------------------- */
+/* BASIC SETUP ----  globally applied and are located in style.css*/
+/* ------------------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------------------- */
+/* REUSABLE COMPONENTS */
+/* ------------------------------------------------------------------------------- */
+.row{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+section{
+   padding: 80px 0; 
+}
+.box{
+    padding: 1%;
+}
+
+/* -------------  HEADINGS     ------------------------------- */
+h1, h2, h3{
+    font-weight: 300;
+    text-transform: uppercase;
+    /* letter-spacing: 1px;
+    word-spacing: 4px; */
+}
+h1{
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 200%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+}
+h2{
+    font-size: 150%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+h3{
+    font-size: 100%;
+    margin-bottom: 15%;
+}
+h2:after{
+   display: block; 
+   height:2px;
+   background-color: #dc6f64;
+   content: "  ";
+   width: 100px;
+   margin: 0 auto;
+   margin-top: 30px;
+}
+
+/* ---------------   PARAGRAPHS   ----------------------- */
+
+.long-copy{
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
+}
+.box p{
+    font-size: 90%;
+    line-height: 145%;
+}
+
+/* ---------------   ICONS   ---------------------------- */
+
+.icon-big{
+    font-size: 200%;
+    display: block;
+    color: #dc6f64;
+    margin-bottom: 15px;
+}
+
+/* ---------------   BUTTONS   ---------------------------- */
+
+.button1:link, 
+.button1:visited,
+input[type=submit]{
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    color: black;
+    transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+.button1-full:link, 
+.button1-full:visited,
+input[type=submit]{
+    background-color: #dc6f64;
+    border: 3px solid #dc6f64;
+    margin-right: 15px;
+}
+.button1-ghost:link, 
+.button1-ghost:visited{
+    border: 3px solid #dc6f64;
+}
+
+.button1:hover, 
+.button1:active,
+input[type=submit]:hover,
+input[type=submit]:active{
+    background-color: #ce3d2e;
+} 
+.button1-full:hover, 
+.button1-full:active,
+input[type=submit] {
+    background-color: #ce3d2e;
+    color: #fff;
+}
+.button1-ghost:hover, 
+.button1-ghost:active{
+    border: 3px solid #ce3d2e;
+    color: #fff;
+
+}
+
+
+
+/* orange color: dc6f64 */
+
+/* ------------------------------------------------------------------------------- */
+/* HEADER   rgba(0, 0, 255, 0.31), rgba(0, 128, 0, 0.193)
+/* ------------------------------------------------------------------------------- */
+
+header{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.207), rgba(0, 0, 0, 0.207)), url("../images/welPic7.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+    /* background: linear-gradient(rgba(0, 0, 255, 0.241), rgba(0, 128, 0, 0.125)), url("../images/welPic4.jpg");
+    size: cover;
+    position: center;
+    height: 100vh; */
+}
+.travel-text-box{
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+.dropdown{
+    opacity: 0.5;
+}
+.logo{
+    background-color:transparent;
+    height:100px;
+    width: auto;
+    float: left;
+    margin-top: 20px;
+}
+.main-nav{
+    float: right;
+    list-style: none;
+    margin-top: 60px ;
+}
+.tripPreference{
+    background-color:transparent;
+    opacity: 1;
+    color: white;
+}
+.main-nav li{
+    display: inline-block;
+    margin-left: 40px;
+}
+.main-nav li a:link, 
+.main-nav li a:visited{
+    padding: 8px 0;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s;
+}
+
+.main-nav li a:hover, 
+.main-nav li a:active{
+    border-bottom: 3px solid #dc6f64;
+    /* color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%; */
+}
+/* ------------------------------------------------------------------------------- */
+/* FEATURES */
+/* ------------------------------------------------------------------------------- */
+
+.section-features .long-copy{
+    margin-bottom: 30px;
+}
+
+
+/* ------------------------------------------------------------------------------- */
+/* TRAVElS  */
+/* ------------------------------------------------------------------------------- */
+
+.section-travel{
+    padding: 0;
+}
+.travel-showcase{
+    list-style: none;
+    width: 100%;
+}
+.travel-showcase li{
+    display: block;
+    float: left;
+    width: 25%;
+}
+.travel-photo{
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: black;
+}
+.travel-photo img{
+    opacity: 0.7;
+    width: 100%;
+    height: auto;
+    transform: scale(1.15);
+    transition: transform 0.5s opcity 0.5s;
+}
+.travel-photo img:hover{
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+
+/* ------------------------------------------------------------------------------- */
+/* HOW IT WORKS  */
+/* ------------------------------------------------------------------------------- */
+
+.section-steps{
+    background-color: rgb(245, 242, 242);
+}
+
+.steps-box:first-child{
+    text-align: center;
+    padding-right: 3%;
+    margin-top: 40px;
+}
+
+.steps-box:last-child{
+    text-align: left;
+    /* padding-left: -5%; */
+    margin-top: 30px;
+    /* margin-left: 10px; */
+}
+.app-screen{
+    border-radius: 20px;
+    margin-top: -20px;
+    margin-right: -10%;
+    width: 40%;
+    height: 340px;;
+}
+.works-step{
+    margin-bottom: 50px;
+}
+.works-step:last-of-type{
+    margin-bottom: 80px;
+}
+
+.works-step div{
+    color: #dc6f64;
+    border: 2px solid #dc6f64;
+    display: inline-block;
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    padding: 5px;
+    float: left;
+    font-size: 150%;
+    margin-right: 15px;
+}
+
+.btn-app:link, .btn-app:visited{
+    border: 0;
+}
+
+.btn-app img{
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+
+
+/* ------------------------------------------------------------------------------- */
+/* TESTIMONIALS  */
+/* ------------------------------------------------------------------------------- */
+
+
+.section-testimonials{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.556), rgba(0, 0, 0, 0.556)), url("../images/custormerBackground.jpg");
+    background-size: cover;
+    color: #fff;
+    background-attachment: fixed;
+}
+
+blockquote{
+    padding: 2%;
+    font-style: italic;
+    line-height: 145%;
+    position: relative;
+    margin-top: 40px;
+}
+
+cite{
+    font-size: 90%;
+    margin-top: top 25%;
+    display: block;
+}
+
+cite img{
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+
+/* ------------------------------------------------------------------------------- */
+/* FORMS  */
+/* ------------------------------------------------------------------------------- */
+
+
+.contact-form{
+    width: 60%;
+    margin: 0 auto;
+}
+input[type=text], 
+input[type=email],
+select, textarea {
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    border: #6a6969;
+}
+.findUs{
+    width: 20%;
+}
+textarea{
+    height:100px;
+}
+
+input[type=checkbox]{
+    margin: 10px 5px 10px 0;
+}
+*:focus{
+    outline: none;
+}
+
+
+/* ------------------------------------------------------------------------------- */
+/* FOOTER  */
+/* ------------------------------------------------------------------------------- */
+
+footer{
+    background-color: #333;
+    padding: 50px;
+    font-size: 80%;
+}
+
+.footer-nav{
+    list-style: none;
+    float: left;
+}
+.social-links{
+    list-style: none;
+    float: right;
+}
+
+.footer-nav li, 
+.social-links li{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-nav li:last-child, 
+.social-links li:last-child{
+    margin-right: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited{
+    text-decoration: none;
+    border:0;
+    color: #888;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active{
+    color: #ddd;
+}
+
+.social-links li a:link,
+.social-links li a:visited{
+    font-size: 150%;
+}
+
+.ion-social-googleplus,
+.ion-social-facebook,
+.ion-social-twitter,
+.ion-social-instagram{
+    transition: color 0.3s
+}
+
+.ion-social-googleplus:hover{
+    color: #dd4b39;
+}
+.ion-social-facebook:hover{
+    color:#3b5998 ;
+}
+.ion-social-twitter:hover{
+    color: #55acee;
+}
+.ion-social-instagram:hover{
+    color:#e95950 ;
+}
+
+
+footer p{
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
+
+

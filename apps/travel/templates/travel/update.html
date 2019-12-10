@@ -1,0 +1,85 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Update Travel</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/update.css' %}">
+</head>
+<body>
+        {% if messages %}
+        <ul class="messages">    
+          {% for message in messages %}    
+            <li>{{ message.message }}</li>    
+      {% endfor %}
+      {% endif %}
+    <div class="class container-fluid">
+        <div class="class row">
+            <div class="class col">
+                <h1>Welcome, {{ user.first_name}}! </h1>
+            </div>
+            <div class="name=success p-3 mb-2 bg-secondary text-whitebg-gradient-info">
+                <h1>{{logoutMessage}}</h1>
+                <a href="/logout" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Log Out</a>
+            </div>
+        </div>
+        <div class="class row">
+            <div class="col">
+                <div class="class row">
+                    <form action="/updateTravels/{{updateID.id}}" method=POST>
+                        {%csrf_token%}
+                                            
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                <label for="exampleFormControlInput1">Title: </label>
+                                <input name="title" type="text"  value="{{updateID.title}}"  class="form-control" id="exampleFormControlInput1" placeholder="title">
+                                </div>
+                            </div>
+                        </div>
+                                         
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                <label for="exampleFormControlInput1">Description: </label>
+                                <input name="description" type="text"  value="{{updateID.description}}"  class="form-control" id="exampleFormControlInput1" placeholder="description">
+                                </div>
+                            </div>
+                        </div>
+
+                       
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                <label for="exampleFormControlInput1">Location: </label>
+                                <input name="location" type="text" value="{{updateID.location}}" class="form-control" id="exampleFormControlInput1" placeholder=updateID.location>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-auto">
+                            <a href="/myTrips" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Cancel</a>
+                            <button type="submit" id="travel_id" class="p-3 mb-2 bg-success text-white btn btn-secondary btn-lg" tabindex="-1" role="button" aria-disabled="true">Submit</button>
+                        </div>
+
+                        <div class="col-auto">
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1"></label>
+                                <input name="hidden_trip_id" type="hidden" value = "{{updateID.id}}" class="form-control" id="exampleFormControlInput1">
+                            </div>
+                        </div>
+
+
+                    </form> 
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

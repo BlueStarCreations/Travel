@@ -1,0 +1,119 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LogIn and Registration</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/logInReg.css' %}">
+</head>
+<body>
+    <div class="errormessage">
+        {% if messages %}
+        <ul class="messages">    
+            {% for message in messages %}    
+            <li>{{ message.message }}</li>    
+            {% endfor %}
+        {% endif %}
+        </ul>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="logIn col p-3 mb-2 text-dark">
+                <h1 name = "LogIn" class="display-4">LogIn</h1>
+                <form action="/login" method="POST">
+                    {%csrf_token%}
+                    <div class="logemail form-group">
+                        <label for="Email1">Email address</label>
+                        <input
+                            name="email"
+                            type="text"
+                            class="form-control"
+                            id="exampleInputEmail1"
+                            aria-describedby="emailHelp"
+                            placeholder="Enter email"
+                        />
+                        <small id="emailHelp" class="form-text text-muted"
+                            >We'll never share your email with anyone else.</small
+                        >
+                    </div>
+                    <div class="logpassword form-group">
+                        <label for="Password">Password</label>
+                        <input
+                            name= "password"
+                            type="password"
+                            class="form-control"
+                            id="inputPassword4"
+                            placeholder="Password"
+                            />
+                    </div>
+                    <button type="submit" class="btn p-3 mb-2 bg-dark text-white">Submit</button>
+                </form>
+            </div>
+
+            <div class="reg col p-3 mb-2 text-dark">
+                <div class="row">
+                <h1 class="display-4">Registration</h1>
+                <form action="/register" method = "POST">
+                    {%csrf_token%}
+                    <div class="form-row">
+                        <div class="col regfname">
+                            <label for="inputEmail4">First Name</label>
+                            <input
+                            name ="first_name"
+                            type="text"
+                            class="form-control"
+                            placeholder="First name"
+                            />
+                        </div>
+                        <div class="col reglname">
+                            <label for="inputEmail4">Last Name</label>
+                            <input
+                            name ="last_name"
+                            type="text"
+                            class="form-control"
+                            placeholder="Last name"
+                            />
+                        </div>
+                        <div class="form-group col-md-6">
+                        <label for="inputEmail4">Email</label>
+                        <input
+                        name="email"
+                            type="text"
+                            class="form-control regemail"
+                            id="inputEmail4"
+                            placeholder="Email"
+                        />
+                        </div>
+                        <div class="form-group col-md-6">
+                        <label for="inputPassword4">Password</label>
+                        <input
+                            name= "password"
+                            type="password"
+                            class="form-control regpassword"
+                            id="inputPassword4"
+                            placeholder="Password"
+                            />
+                        </div>
+              <div class="form-group col-md-6">
+                  <label for="inputPassword4">Confirm Password</label>
+                  <input
+                    name= "confirmPassword"
+                    type="password"
+                    class="form-control regCpass"
+                    id="inputconfirmPassword4"
+                    placeholder="ConfirmPassword"
+                  />
+              </div>
+              <button type="submit" class="btn p-3 mb-2 bg-dark text-white">Submit</button> 
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
+</body>
+</html>
